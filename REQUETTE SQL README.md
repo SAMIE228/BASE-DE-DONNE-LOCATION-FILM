@@ -5,28 +5,28 @@ Quelques requêtes SQL à disposition pour faire des essais.
 
 AJOUTER UN FILM
 
-INSERT INTO Film_information(Titre,Date_sorti,Dure,Realisateur) values (`Jurassic Park`,`1993/10/20`,`2H 07min`,`Steven Spielberg`);
+INSERT INTO location_de_film.Film_information(Titre,Date_sorti,Dure,Realisateur) values ('Park','1993/10/20','2H 07min','Steven Spielberg');
 
 MODIFIER UN FILM
 
-UPDATE Film_information SET Titre = `Jurassic et Park`WHERE id = 5;
+UPDATE location_de_film.Film_information SET Titre = 'Jurassic et Park'WHERE idFilm_information = 5;
 
 SUPRIMER UN FILM
 
-DELETE FROM Film_information WHERE id = 5;
+DELETE FROM location_de_film.Film_information WHERE idFilm_information = 5;
 
 AJOUTER UN CLIENT
 
-INSERT INTO client (Nom,Prenom,Email) values (`AKOUA`,`AWOUDJA`,`Akoua@gmail.com`);
+INSERT INTO location_de_film.client (Nom,Prenom,Email) values ('AKOUA','AWOUDJA','Akoua@gmail.com');
 
 MODIFIER UN CLIENT
 
-UPDATE client SET Nom = `AKOUA`WHERE id = 5;
+UPDATE location_de_film.client SET Nom = 'AKOUA'WHERE idclient = 5;
 
 SUPRIMER UN CLIENT
 
-DELETE FROM client WHERE id = 5;
+DELETE FROM location_de_film.client WHERE idclient = 5;
 
 AFFICHER LES TROIS DERNIERS FILM
 
-SELECT Titre FROM Film_information ORDER BY id DESC;
+SELECT * FROM location_de_film.Film_information ORDER BY idFilm_information DESC LIMIT 3 ;
